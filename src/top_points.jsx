@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-
 function Top_Points({players}){
 
     const [index, setIndex] = useState(10);

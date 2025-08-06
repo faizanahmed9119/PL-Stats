@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/PL-stats-app/', // 👈 IMPORTANT
+  base: '/PL-stats-app/',
 });
 
 
