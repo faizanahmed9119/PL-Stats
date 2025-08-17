@@ -7,6 +7,9 @@ import Top_Points from './top_points.jsx';
 import Top_PPG from './top_ppg.jsx';
 import Value from './value.jsx';
 import Footer from './footer.jsx';
+import Defenders from './defenders.jsx';
+import Midfielders from './midfielders.jsx';
+import Attackers from './attackers.jsx';
 
 function App() {
   const [players, setPlayers] = useState([]);
@@ -54,7 +57,14 @@ function App() {
       <Top_Points players = {players}/>
       <Top_PPG players = {players}/>
       <Value players = {players}/>
+      
     </div>
+    <div id='data-display'>
+      <Defenders players={players}/>
+      <Midfielders players={players}/>
+      <Attackers players={players}/>
+    </div>
+    
     <Footer/>
     </>
   )
