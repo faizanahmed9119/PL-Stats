@@ -272,4 +272,20 @@ a:visited{
     text-decoration: underline;
 }
 
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 4px 0;
+  font-size: larger;
+}
 
+.stat-label {
+  font-weight: 600;
+  text-align: left;
+  margin-left: 30px;
+}
+
+.stat-value {
+  text-align: right;
+  margin-right: 30px;
+}

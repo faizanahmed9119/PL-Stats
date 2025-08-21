@@ -31,54 +31,152 @@ function TeamData({players}){
         setFoundIndex(index2);
     }
 
-    let content;
-    if(players[index]?.position === 1){
-        content = <div id="content">
-        <img id="imag" src={players[index]?.photo} alt="Photo not found"/>
+let content;
+
+if (players[index]?.position === 1) {
+  content = (
+    <div id="content">
+      <img id="imag" src={players[index]?.photo} alt="Photo not found" />
+      <div id="stats">
         <h1>{players[index]?.firstName} {players[index]?.lastName}</h1>
-        <h3>Clean Sheets: {players[index]?.sheets}</h3>
-        <h3>Saves: {players[index]?.saves}</h3>
-        <h3>FPL Points: {players[index]?.total_points}</h3>
-        <h3>FPL PPG: {players[index]?.ppg}</h3>
+
+        <div className="stat-row">
+          <span className="stat-label">Clean Sheets:</span>
+          <span className="stat-value">{players[index]?.sheets}</span>
         </div>
-    } else if(players[index]?.position === 2){
-        content = <div id="content"> 
-            <img id="imag" src={players[index]?.photo} alt="Photo not found"/>
-            <h1>{players[index]?.firstName} {players[index]?.lastName}</h1>
-            <h3>Clean Sheets: {players[index]?.sheets}</h3>
-            <h3>Goals: {players[index]?.goals}</h3>
-            <h3>Assists: {players[index]?.assists}</h3> 
-            <h3>FPL Points: {players[index]?.total_points}</h3>
-            <h3>FPL PPG: {players[index]?.ppg}</h3>
-            </div> 
-    } else if(players[index]?.position === 3){
-        content = <div id="content"> 
-            <img id="imag" src={players[index]?.photo} alt="Photo not found"/>
-            <h1>{players[index]?.firstName} {players[index]?.lastName}</h1>
-            <h3>Goals: {players[index]?.goals}</h3>
-            <h3>Assists: {players[index]?.assists}</h3> 
-            <h3>Expected Goals: {players[index]?.xG}</h3>
-            <h3>Expected Assists: {players[index]?.xA}</h3>
-            <h3>FPL Points: {players[index]?.total_points}</h3>
-            <h3>FPL PPG: {players[index]?.ppg}</h3>
-            </div> 
-    } else if(players[index]?.position === 4){
-        content = <div id="content"> 
-            <img id="imag" src={players[index]?.photo} alt="Photo not found"/>
-            <h1>{players[index]?.firstName} {players[index]?.lastName}</h1>
-            <h3>Goals: {players[index]?.goals}</h3>
-            <h3>Assists: {players[index]?.assists}</h3> 
-            <h3>Expected Goals: {players[index]?.xG}</h3>
-            <h3>FPL Points: {players[index]?.total_points}</h3>
-            <h3>FPL PPG: {players[index]?.ppg}</h3>
-            </div> 
-    } else if(index === -1){
-        content = <div id="content"> 
-            <img id="imag" src={players[index]?.photo} alt="Photo not found"/>
-            <h1>Player Not Found</h1>
-            <h3>Make sure you have entered the right name</h3>
-            </div> 
-    }
+
+        <div className="stat-row">
+          <span className="stat-label">Saves:</span>
+          <span className="stat-value">{players[index]?.saves}</span>
+        </div>
+
+        <div className="stat-row">
+          <span className="stat-label">FPL Points:</span>
+          <span className="stat-value">{players[index]?.total_points}</span>
+        </div>
+
+        <div className="stat-row">
+          <span className="stat-label">FPL PPG:</span>
+          <span className="stat-value">{players[index]?.ppg}</span>
+        </div>
+      </div>
+    </div>
+  );
+} else if (players[index]?.position === 2) {
+  content = (
+    <div id="content">
+      <img id="imag" src={players[index]?.photo} alt="Photo not found" />
+      <div id="stats">
+        <h1>{players[index]?.firstName} {players[index]?.lastName}</h1>
+
+        <div className="stat-row">
+          <span className="stat-label">Clean Sheets:</span>
+          <span className="stat-value">{players[index]?.sheets}</span>
+        </div>
+
+        <div className="stat-row">
+          <span className="stat-label">Goals:</span>
+          <span className="stat-value">{players[index]?.goals}</span>
+        </div>
+
+        <div className="stat-row">
+          <span className="stat-label">Assists:</span>
+          <span className="stat-value">{players[index]?.assists}</span>
+        </div>
+
+        <div className="stat-row">
+          <span className="stat-label">FPL Points:</span>
+          <span className="stat-value">{players[index]?.total_points}</span>
+        </div>
+
+        <div className="stat-row">
+          <span className="stat-label">FPL PPG:</span>
+          <span className="stat-value">{players[index]?.ppg}</span>
+        </div>
+      </div>
+    </div>
+  );
+} else if (players[index]?.position === 3) {
+  content = (
+    <div id="content">
+      <img id="imag" src={players[index]?.photo} alt="Photo not found" />
+      <div id="stats">
+        <h1>{players[index]?.firstName} {players[index]?.lastName}</h1>
+
+        <div className="stat-row">
+          <span className="stat-label">Goals:</span>
+          <span className="stat-value">{players[index]?.goals}</span>
+        </div>
+
+        <div className="stat-row">
+          <span className="stat-label">Assists:</span>
+          <span className="stat-value">{players[index]?.assists}</span>
+        </div>
+
+        <div className="stat-row">
+          <span className="stat-label">xG:</span>
+          <span className="stat-value">{players[index]?.xG}</span>
+        </div>
+
+        <div className="stat-row">
+          <span className="stat-label">xA:</span>
+          <span className="stat-value">{players[index]?.xA}</span>
+        </div>
+
+        <div className="stat-row">
+          <span className="stat-label">FPL Points:</span>
+          <span className="stat-value">{players[index]?.total_points}</span>
+        </div>
+
+        <div className="stat-row">
+          <span className="stat-label">FPL PPG:</span>
+          <span className="stat-value">{players[index]?.ppg}</span>
+        </div>
+      </div>
+    </div>
+  );
+} else if (players[index]?.position === 4) {
+  content = (
+    <div id="content">
+      <img id="imag" src={players[index]?.photo} alt="Photo not found" />
+      <div id="stats">
+        <h1>{players[index]?.firstName} {players[index]?.lastName}</h1>
+
+        <div className="stat-row">
+          <span className="stat-label">Goals:</span>
+          <span className="stat-value">{players[index]?.goals}</span>
+        </div>
+
+        <div className="stat-row">
+          <span className="stat-label">Assists:</span>
+          <span className="stat-value">{players[index]?.assists}</span>
+        </div>
+
+        <div className="stat-row">
+          <span className="stat-label">xG:</span>
+          <span className="stat-value">{players[index]?.xG}</span>
+        </div>
+
+        <div className="stat-row">
+          <span className="stat-label">FPL Points:</span>
+          <span className="stat-value">{players[index]?.total_points}</span>
+        </div>
+
+        <div className="stat-row">
+          <span className="stat-label">FPL PPG:</span>
+          <span className="stat-value">{players[index]?.ppg}</span>
+        </div>
+      </div>
+    </div>
+  );
+} else if (index === -1) {
+  content = (
+    <div id="content">
+      <h1>Player Not Found</h1>
+      <h3>Make sure you have entered the right name</h3>
+    </div>
+  );
+}
 
     return(
         <>
